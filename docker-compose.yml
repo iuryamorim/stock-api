@@ -1,0 +1,14 @@
+---
+version: '3'
+services:
+  stock-api:
+    image: stock-api
+    container_name: stock-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/stock-api
+      - ./shared:/stock-api/shared
+    ports:
+      - 8000:8000
